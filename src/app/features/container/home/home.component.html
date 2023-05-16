@@ -1,0 +1,67 @@
+<div class="content">
+  <div class="header">
+    <h2>O que iremos criar hoje?</h2>
+    <button class="new-content">+ Novo conteúdo</button>
+  </div>
+  <div class="medias">
+    <h3>Conteúdo em vídeos</h3>
+    <!-- Transformar isso em um componente e reutilizar nas outras ocasiões -->
+    <div class="card" [routerLink]="['/video']">
+      <span class="material-symbols-outlined"> home </span>
+      <h4>Vídeo para Reels</h4>
+      <p>This is short and sweet description text.</p>
+    </div>
+  </div>
+
+  <h2>Conteúdos Prontos</h2>
+
+  <div *ngIf="docs$ | async as docs">
+    <mat-card>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th class="date">Data</th>
+            <th class="status"></th>
+          </tr>
+        </thead>
+        <tbody
+          *ngFor="
+            let items of docs.docs
+              | paginate
+                : {
+                    id: 'projects',
+                    itemsPerPage: limit,
+                    currentPage: page,
+                    totalItems: limit
+                  }
+          "
+        >
+          <td class="text-container">
+            <span class="text">{{ items.title }}</span>
+          </td>
+          <td>
+            <span class="text">{{ items.date }}</span>
+          </td>
+          <td class="more">
+            <button mat-fab color="warn" class="viewMore" (click)="generateVideo(items._id, 'instagram', 'video')">
+              <mat-icon>cloud_upload</mat-icon>
+            </button>
+            <button mat-fab color="primary" class="viewMore" (click)="detailsDialog(items)" >
+              <mat-icon>note_add</mat-icon>
+            </button>
+            
+          </td>
+          <mat-divider></mat-divider>
+        </tbody>
+
+        <pagination-controls
+          (pageChange)="getContent($event)"
+          [responsive]="true"
+          previousLabel="Voltar"
+          nextLabel="Próximo"
+        ></pagination-controls>
+      </table>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="content">
+  <mat-form-field>
+    <mat-label>Título</mat-label>
+    <input
+      matInput
+      required
+      (change)="this.title = $any($event.target).value"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descrição</mat-label>
+    <input matInput (change)="this.description = $any($event.target).value" />
+  </mat-form-field>
+  <div *ngFor="let item of news; let i = index" class="news">
+    <mat-form-field>
+      <mat-label>Notícia {{ i + 1 }}</mat-label>
+      <textarea
+        required
+        value="{{ item }}"
+        matInput
+        (change)="this.news[i] = $any($event.target).value"
+      ></textarea></mat-form-field
+    ><button
+      mat-fab
+      color="warn"
+      class="remove-news"
+      (click)="news.splice(i, 1)"
+      *ngIf="i >= 1"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <button mat-fab color="primary" class="add-news" (click)="news.push('')">
+    <mat-icon>note_add</mat-icon>
+  </button>
+
+  <div class="buttons">
+    <button class="return" [routerLink]="['/']">Voltar</button>
+    <button class="generate" (click)="generateContent()">Gerar</button>
+  </div>
+</div>

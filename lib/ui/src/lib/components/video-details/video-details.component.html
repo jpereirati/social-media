@@ -1,0 +1,29 @@
+<div class="custom-modal">
+  <div mat-dialog-title>
+    <strong>{{ VideoDocuments.title }}</strong>
+    <small></small>
+  </div>
+
+  <mat-dialog-content>
+    <div>
+      <div class="news">
+        <h3>Notícias</h3>
+        <div *ngFor="let item of news" [formGroup]="form">
+         
+          <p><mat-checkbox [formControlName]="$any(item._id)" >{{ item.text }}</mat-checkbox></p>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <div class="action-left">
+      <button class="new-content return" (click)="dialog.closeAll();">Voltar</button>
+
+    </div>
+
+    <div class="action-right">
+      <button class="new-content" (click)="patchNews()">Editar</button>
+    </div>
+  </mat-dialog-actions>
+</div>
