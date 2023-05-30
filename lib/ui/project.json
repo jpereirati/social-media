@@ -6,22 +6,7 @@
   "tags": [],
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "options": {
-        "project": "lib/ui/ng-package.json"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "lib/ui/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "lib/ui/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
+
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],

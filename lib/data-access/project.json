@@ -6,22 +6,7 @@
   "tags": [],
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "ngx-build-plus:browser",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "options": {
-        "project": "lib/data-access/ng-package.json"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "lib/data-access/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "lib/data-access/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
+
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
