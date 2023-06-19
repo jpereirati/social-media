@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { ContentService } from '@social-media/lib/data-access';
 
 @Component({
@@ -18,7 +19,8 @@ export class VideoComponent {
 
   constructor(
     private contentService: ContentService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
 
@@ -32,6 +34,6 @@ export class VideoComponent {
       title: this.title,
       description: this.description,
       news: this.news,
-    })
+    }).subscribe(() => this.router.navigateByUrl('/'))
   }
 }
