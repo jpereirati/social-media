@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VideoDetailsComponent } from './video-details.component';
+import { UploadTypeComponent } from './upload-type.component';
 import { DataAccessModule } from '@social-media/lib/data-access';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -20,7 +20,7 @@ import { NotifierModule } from 'angular-notifier';
         MatCheckboxModule,
         ReactiveFormsModule
     ],
-    exports: [VideoDetailsComponent],
-    declarations: [VideoDetailsComponent],
+    exports: [UploadTypeComponent],
+    declarations: [UploadTypeComponent],
 })
-export class VideoDetailsModule { }
+export class UploadTypeModule { }

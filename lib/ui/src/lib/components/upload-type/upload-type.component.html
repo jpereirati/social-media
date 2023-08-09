@@ -1,0 +1,18 @@
+<div class="custom-modal">
+  <div mat-dialog-title>
+    <h3>Selecione o tipo do envio</h3>
+    <small></small>
+  </div>
+
+  <mat-dialog-actions>
+    <div class="action-left">
+      <button class="new-content return" (click)="dialog.closeAll();">Voltar</button>
+
+    </div>
+
+    <div class="action-right">
+      <button class="new-content story" (click)="generate('story')">Story</button>
+      <button class="new-content" (click)="generate('video')">Vídeo</button>
+    </div>
+  </mat-dialog-actions>
+</div>

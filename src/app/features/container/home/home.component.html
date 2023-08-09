@@ -27,7 +27,7 @@
         </thead>
         <tbody
           *ngFor="
-            let items of docs.docs
+            let items of docs.docs.reverse()
               | paginate
                 : {
                     id: 'projects',
@@ -44,7 +44,7 @@
             <span class="text">{{ items.date }}</span>
           </td>
           <td class="more">
-            <button mat-fab color="warn" class="viewMore" (click)="generateVideo(items._id, 'instagram', 'video')">
+            <button mat-fab color="warn" class="viewMore" (click)="generateVideo(items._id, 'instagram')">
               <mat-icon>cloud_upload</mat-icon>
             </button>
             <button mat-fab color="primary" class="viewMore" (click)="detailsDialog(items)" >

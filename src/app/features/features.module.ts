@@ -10,25 +10,28 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDividerModule } from '@angular/material/divider';
-import { UiModule, VideoDetailsModule } from '@social-media/lib/ui';
+import { UiModule, UploadTypeModule, VideoDetailsModule } from '@social-media/lib/ui';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes),
-    MatCardModule,
-    UiModule,
-    MatSnackBarModule,
-    CommonModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    VideoDetailsModule,
-    MatDividerModule,
-    MatDialogModule,
-    NgxPaginationModule,
-  ],
-  declarations: [HomeComponent, VideoComponent],
+    imports: [
+        RouterModule.forChild(routes),
+        MatCardModule,
+        UiModule,
+        MatSnackBarModule,
+        CommonModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        VideoDetailsModule,
+        UploadTypeModule,
+        NgxSpinnerModule,
+        MatDividerModule,
+        MatDialogModule,
+        NgxPaginationModule,
+    ],
+    declarations: [HomeComponent, VideoComponent],
 })
-export class FeaturesModule {}
+export class FeaturesModule { }

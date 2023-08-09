@@ -1,0 +1,80 @@
+::ng-deep {
+    .cdk-overlay-backdrop.custom-backdrop {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(3px);
+    }
+
+    .mat-select-arrow {
+        opacity: 0;
+    }
+
+    .mat-select-disabled .mat-select-panel {
+        color: black !important;
+    }
+
+    .mat-select-disabled .mat-select-value {
+        color: black !important;
+    }
+
+    .cdk-overlay-pane.custom-panel {
+        padding: 3px;
+        border-radius: 5px;
+        border: 1px solid #0000;
+
+        .mat-dialog-title small {
+            font-weight: normal;
+            font-size: 0.7em;
+            display: block;
+            line-height: 1.5em;
+        }
+
+        .mat-dialog-container {
+            box-shadow: none;
+        }
+    }
+
+    .mat-form-field.smaller {
+        width: 15%;
+        margin: 0 5px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+}
+
+.action-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.new-content {
+    border: none;
+    margin-left: auto;
+    margin-right: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 48px;
+    gap: 10px;
+    width: 230px;
+    height: 48px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    /* Primary/400 */
+
+    background: #0500f4;
+    color: white;
+    border-radius: 8px;
+}
+
+.story {
+    background: green;
+}
+
+.return {
+    background: red;
+}
