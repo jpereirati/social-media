@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
     public docs$: Observable<ContentResponse>;
     public limit = 3;
-    public page = 2;
+    public page = 1;
     public selectedNews: CommonContent[];
 
     constructor(
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.getContent(1);
+        this.getContent(this.page);
     }
 
     getContent(page) {

@@ -31,9 +31,9 @@
               | paginate
                 : {
                     id: 'projects',
-                    itemsPerPage: limit,
+                    itemsPerPage: docs.limit,
                     currentPage: page,
-                    totalItems: limit
+                    totalItems: docs.totalDocs
                   }
           "
         >
@@ -56,6 +56,7 @@
         </tbody>
 
         <pagination-controls
+          id="projects"
           (pageChange)="getContent($event)"
           [responsive]="true"
           previousLabel="Voltar"
